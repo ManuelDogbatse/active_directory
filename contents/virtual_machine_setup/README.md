@@ -55,29 +55,98 @@ Open the 'MediaCreationTool' executable and run it. Then follow the following st
 Then the ISO file will begin to download. Once it finishes, click 'Finish'.
 
 ## Setting up Windows Server
+
 In VirtualBox, create a new virtual machine by clicking the 'New' button:
 
 <p align="center">
 <img src="../../images/virtualbox_add_vm.jpg" alt="VirtualBox add virtual machine" height="100px">
 </p>
 
-Name your virtual machine 'AD-DC' (Active Directory Domain Controller), and change the folder that you will store your VM, if you want to.
+Name your virtual machine 'AD-DC' (Active Directory Domain Controller):
 
 <p align="center">
 <img src="../../images/virtualbox_dc_name_folder.jpg" alt="Changing the name and folder for DC VM" height="150px">
 </p>
 
-Then for the ISO image, select the ISO file for Windows Server:
+For the ISO image, select the ISO file for Windows Server. Click 'Other' if your ISO file doesn't show up, then select it from your file explorer.
 
 <p align="center">
 <img src="../../images/virtualbox_dc_iso_image.jpg" alt="Selecting the ISO image for DC VM" height="100px">
 </p>
 
-Click 'Other' if your ISO file doesn't show up, then select it from your file explorer.
+Check the 'Skip Unattended Installation' box and click 'Next':
 
 <p align="center">
-<img src="../../images/vbox_dc_skip_unat_inst.jpg" alt="Selecting the ISO image for DC VM" height="100px">
+<img src="../../images/vbox_dc_skip_unat_inst.jpg" alt="Skipping unattended installation" height="190px">
 </p>
+
+For the memory, you can keep it as the default settings, but if you have more resources to use, you can adjust the memory and number of processors in this step and in the future. Click 'Next' when you're happy with the memory.
+
+<p align="center">
+<img src="../../images/vbox_mem_allo.png" alt="Allocating memory for VM" height="180px">
+</p>
+
+For the virtual hard disk, change it from 50GB to 20GB, as this lab doesn't require a large amount of storage. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/vbox_strg_allo.png" alt="Changing hard disk size" height="80px">
+</p>
+
+Click 'Finish' on the summary page to create your virtual machine. Then right click your newly created virtual machine and click 'Settings':
+
+<p align="center">
+<img src="../../images/vbox_vm_settings_button.png" alt="VM settings button" height="75px">
+</p>
+
+Under 'General', click 'Advanced' and change 'Shared Clipboard' and 'Drag'n'Drop' to 'Bidirectonal'. This is to enable clipboard and file sharing between your PC and your virtual machine.
+
+<p align="center">
+<img src="../../images/vbox_bidir.png" alt="Bidirectional file and clipboard sharing between host and VM" height="135px">
+</p>
+
+Under 'Network', make sure Adapter 1 is attached to 'NAT'. This will connect your virtual machine to your router, but won't be accessible by other devices on your network.
+
+<p align="center">
+<img src="../../images/vbox_nat.png" alt="NAT adapter for VM" height="140px">
+</p>
+
+Click 'Adapter 2', enable the network adapter and change the attached adapter to 'Internal Network'. Name your internal network 'ad-intnet' to isolate your lab environment from other VirtualBox internal networks.
+
+<p align="center">
+<img src="../../images/vbox_intnet.png" alt="Internal network adapter for VM" height="130px">
+</p>
+
+Click 'OK'. Your virtual machine is now setup. To start it, click the 'Start' icon or double click the virtual machine.
+
+After some time, the virtual machine will display a setup screen. For the first settings, choose the language, time format, and keyboard settings for you. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/win_ser_lang_setup.png" alt="Language, time, and keyboard setup Windows Server" height="350px">
+</p>
+
+Then click 'Install Now'.
+
+After some time, select 'Windows Server 2019 Standard Evaluation (Desktop Experience)' and click 'Next'.
+
+<p align="center">
+<img src="../../images/win_ser_ver_select.png" alt="Selecting Windows Server version" height="140px">
+</p>
+
+Accept the licensing terms and click 'Next', then click the 'Custom' Windows installation type:
+
+<p align="center">
+<img src="../../images/win_ser_custom.png" alt="Custom Install Windows only" height="190px">
+</p>
+
+On the next page, the virtual hard disk will already be selected, so click 'Next'. Now Windows Server will install on the virtual machine.
+
+After waiting for some time, the virtual machine will automatically restart. Once the virtual machine has rebooted, you will be prompted to create a password for the administrator account. Enter your password and click 'Finish'.
+
+<p align="center">
+<img src="../../images/win_ser_passwd.png" alt="Setting password for admin account" height="190px">
+</p>
+
+After some time. You will be directed to the Windows login page. Press the right CTRL button and Delete to input a 'CTRL+ALT+DEL' into the machine to login, and enter your password for the administrator account.
 
 ## Sections
 
