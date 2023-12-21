@@ -6,6 +6,8 @@
 
 [Setting up Windows Server](#setting-up-windows-server)
 
+[Setting Up VirtualBox Guest Additions](#setting-up-virtualbox-guest-additions)
+
 [Sections](#sections)
 
 ## Downloading Dependencies
@@ -146,10 +148,39 @@ After waiting for some time, the virtual machine will automatically restart. Onc
 <img src="../../images/win_ser_passwd.png" alt="Setting password for admin account" height="190px">
 </p>
 
-After some time. You will be directed to the Windows login page. Press the right CTRL button and Delete to input a 'CTRL+ALT+DEL' into the machine to login, and enter your password for the administrator account.
+After some time. You will be directed to the Windows login page. Press the right CTRL button and Delete to input a 'CTRL+ALT+DEL' into the machine to login, enter your password for the administrator account and press Enter.
+
+You will now be logged into the Windows Server machine. Click 'Yes' on the Networks popup to ensure that the DC is discoverable by other devices on it's network.
+
+<p align="center">
+<img src="../../images/win_ser_network_discovery.png" alt="Making DC discoverable by other devices on network" height="320px">
+</p>
+
+## Setting Up VirtualBox Guest Additions
+In VirtualBox VMs, you can improve their performance and their appearance by using the VirtualBox Guest Additions image. To set this up in the DC, click Devices > Insert Guest Additions CD image in the toolbar on the top left of the virtual machine window.
+
+<p align="center">
+<img src="../../images/insert_guest_add.png" alt="Inserting Guest Additions CD image" height="230px">
+</p>
+
+Then inside the VM, open File Explorer and go to This PC > CD Drive (D:) VirtualBox Guest Additions. Then click the Windows executable ending in 'amd64' to open the Guest Additions installer:
+
+<p align="center">
+<img src="../../images/amd-64-exe.png" alt="Guest Additions Executable" height="100px">
+</p>
+
+Click Next > Next > Install to install Guest Additions. After it installs, select the 'I want to manually reboot later' option and click Finish.
+
+<p align="center">
+<img src="../../images/guest_add_finish.png" alt="Finishing Guest Additions Installation" height="300px">
+</p>
+
+Then manually shut down the computer. After clicking shut down, click 'Continue' for the reason for shutdown dropdown.
+
+Start the VM again and login as the administrator account. After about 20 seconds, the virtual machine will stretch out to the entirety of the VirtualBox window. If it doesn't happen straight away, try changing the size of the window and it will eventually start to change the resolution of the VM.
 
 ## Sections
 
 #### Home Page: [Active Directory](../../)
 
-#### Next Section: [...](.)
+#### Next Section: [Setting up Active Directory Domain Services](../active_directory_setup/)
