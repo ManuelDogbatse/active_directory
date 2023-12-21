@@ -22,9 +22,9 @@ The virtual machine running Windows Server is the domain controller (DC) for the
 
 The DC has defined the domain 'mydomain.com' for the Active Directory environment, so that every user, computer, group, shared file and organisational unit can be referenced via the domain within the network.
 
-The NAT allows each client computer in the internal network connect to the internet through the domain controller.
+The Network Address Translation (NAT) service allows each client computer in the internal network connect to the internet through the domain controller.
 
-The DHCP server leases IP addresses to the client computers from the range 176.16.0.100 - 176.16.0.200. It also makes the domain controller's internal network interface the default gateway and the primary DNS server for each client computer.
+The Dynamic Host Configuration Protocol (DHCP) server leases IP addresses to the client computers from the range 176.16.0.100 - 176.16.0.200. It also makes the domain controller's internal network interface the default gateway and the primary DNS server for each client computer.
 
 ## Sections
 
@@ -33,3 +33,7 @@ The DHCP server leases IP addresses to the client computers from the range 176.1
 ### [Setting up Virtual Machines](./contents/virtual_machine_setup/)
 
 Setting up virtual machines for Active Directory lab
+
+### [Setting up Active Directory Domain Services](./contents/active_directory_setup/)
+
+Setting up Active Directory Domain Services on the DC virtual machine
