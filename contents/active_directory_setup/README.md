@@ -58,6 +58,128 @@ Change the name to 'DC' and click 'Next', then click 'Restart Now > Continue' to
 <img src="../../images/rename_pc_to_dc.png" alt="Renaming PC to DC" height="200px">
 </p>
 
+Now your DC VM will have the hostname 'DC'.
+
+## Installing Active Directory Domain Services
+
+To install Active Directory Domain Services to the DC, go to the server manager application, which by default will display its dashboard.
+
+<p align="center">
+<img src="../../images/server_manager_dashboard.png" alt="Server Manager dashboard" height="400px">
+</p>
+
+Click on 'Add roles and features' to add Active Directory. Click 'Next > Next'. For the server selection, you should see the DC server with the configured IP addresses.
+
+<p align="center">
+<img src="../../images/server_selection.png" alt="Server Selection" height="65px">
+</p>
+
+Click Next. Then select the 'Active Directory Domain Services' checkbox. Then click 'Add Features' in the popup. Then click 'Next > Next > Next > Install' to install Active Directory Domain Services.
+
+Once the blue bar fills up, the installation is complete. Click 'Close', and then click the flag with the warning symbol on the top right of the Server Manager dashboard.
+
+<p align="center">
+<img src="../../images/server_manager_flag.png" alt="Server Manager flag" height="270px">
+</p>
+
+Click 'Promote this server to a domain controller' to make the virtual machine the DC for your Active Directory lab.
+
+Under 'Deployment Configuration' select the 'Add a new forest' option and enter 'mydomain.com' as the root domain name of the Active Directory network. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/set_domain_name.png" alt="Setting domain name for AD" height="150px">
+</p>
+
+Then enter a password in the DSRM field. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/dsrm_password.png" alt="Setting password for DSRM" height="90px">
+</p>
+
+Click 'Next > Next > Next > Next > Next > Install'. When the installation is complete, a popup will appear. Click 'Close' and then click 'Close' in the installation window to automatically restart the VM.
+
+Now when you log in, the administrator account will have 'MYDOMAIN\' prepended to it.
+
+<p align="center">
+<img src="../../images/new_login.png" alt="New login for DC" height="270px">
+</p>
+
+## Adding New Administrator User
+
+In system administration, it is good practice to create users with administration privileges to perform administration tasks, rather than using the default administrator account.
+
+To do this, go to the Start Menu > Windows Administrative Tools > Active Directory Users and Computers.
+
+<p align="center">
+<img src="../../images//start_menu_users.png" alt="Users and Computers via Start Menu" height="220px">
+</p>
+
+Alternatively, on the Server Manager dashboard, click 'Tools' in the top right of the window, and select 'Active Directory Users and Computers'.
+
+<p align="center">
+<img src="../../images/ser_man_dash_users.png" alt="Users and Computers via Server Manager Dashboard" height="150px">
+</p>
+
+Expand the 'mydomain.com' directory on the left of the window.
+
+<p align="center">
+<img src="../../images/users_and_comps_mydomain.png" alt="mydomain.com inside Users and Computers" height="130px">
+</p>
+
+Then right click 'mydomain.com' and select New > Organisational Unit. An organisational unit (OU) is a directory for storing different objects in Active Directory, such as users, computers, and groups.
+
+Name this OU '_Admins'. Prepending underscores to OUs makes it easier to identify custom OUs in large quantities.
+
+<p align="center">
+<img src="../../images/create_new_ou.png" alt="mydomain.com inside Users and Computers" height="300px">
+</p>
+
+> NOTE - If you want to experiment with OUs, uncheck 'Protect container from accidental deletion' to allow the deletion of the OU without extra steps.
+
+Click 'OK' to create the admin OU. Then right click the newly created OU and select New > User. Enter a first name and a surname, then for the user logon name, name it 'a-' followed by the initial of the first name and the full surname e.g. for John Doe: 'a-jdoe'. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/creating_user.png" alt="Creating a new user" height="300px">
+</p>
+
+Enter a password for the user, and for this lab, uncheck 'User must change password on next logon' and check 'Password never expires'.
+
+> NOTE - In the real world, keep 'User must change password on next logon' checked and 'Password never expires' unchecked for extra security.
+
+<p align="center">
+<img src="../../images/creating_user_password.png" alt="Creating password for the new user" height="300px">
+</p>
+
+Click 'Next > Finish' to create the user.
+
+Then to give the user administrator privileges, right click the user, and select 'Properties'. Then go to the 'Member Of' tab and click 'Add'.
+
+<p align="center">
+<img src="../../images/add_user_to_group.png" alt="Adding user to group" height="250px">
+</p>
+
+Search 'domain admins' and click 'Check Names' to resolve the search. Then click 'OK'.
+
+<p align="center">
+<img src="../../images/search_for_group.png" alt="Searching for a group name" height="80px">
+</p>
+
+Then click 'Apply' and then 'OK' in the properties window to confirm the change. Now the user has been added to the domain admins group and has administrator privileges.
+
+Then sign out and login as the newly created admin user. To do this, on the login screen, click 'Other User' on the bottom left of the screen.
+
+<p align="center">
+<img src="../../images/other_user.png" alt="Other user tab in login screen" height="110px">
+</p>
+
+Enter the logon name of the admin user and their password, and press 'Enter'.
+
+<p align="center">
+<img src="../../images/new_user_login.png" alt="Logging in as the new user" height="350px">
+</p>
+
+You will now login as the admin user.
+
 ## Sections
 
 #### Home Page: [Active Directory](../../)
