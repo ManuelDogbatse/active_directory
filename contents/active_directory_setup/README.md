@@ -271,9 +271,38 @@ Add the '172.16.0.100' as the start IP address, '172.16.0.200' as the end IP add
 Click 'Next > Next'. For the lease duration, it is set as 8 days by default, which is a sensible value. This should be decreased if this was a DHCP server for a public WiFi network. Click 'Next'.
 
 <p align="center">
-<img src="../../images/dhcp_lease_time.png" alt="DHCP lease times" height="80px">
+<img src="../../images/dhcp_lease_time.png" alt="DHCP lease times" height="70px">
 </p>
 
+Make sure that 'Yes' is selected in the configure DHCP options page and click 'Next'.
+
+<p align="center">
+<img src="../../images/configure_dhcp.png" alt="Configure DHCP options" height="80px">
+</p>
+
+For the default gateway, type '172.16.0.1', which is the IP address of the DC. Then click 'Add' and select the IP address. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/dhcp_default_gateway.png" alt="Setting DHCP default gateway" height="180px">
+</p>
+
+For the DNS server, select the IP address of the DC and then click 'Next'.
+
+<p align="center">
+<img src="../../images/dhcp_dns_server.png" alt="Setting DHCP DNS server" height="200px">
+</p>
+
+Click 'Next > Next > Finish' to complete the DHCP scope setup. On the DHCP window, right click the DC domain name and click 'Authorize'.
+
+<p align="center">
+<img src="../../images/authorise_dhcp_server.png" alt="Authorising DHCP server" height="100px">
+</p>
+
+Then right click the DC domain name again and click 'Refresh'. Now the IPv4 and IPv6 text will have green tick icons. This means DHCP has been setup successfully.
+
+<p align="center">
+<img src="../../images/dhcp_success.png" alt="Successfully setup DHCP server" height="60px">
+</p>
 
 ## Sections
 
