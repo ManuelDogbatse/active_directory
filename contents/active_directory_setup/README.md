@@ -4,6 +4,12 @@
 
 [Setting up Network Interfaces](#setting-up-network-interfaces)
 
+[Adding New Administrator User](#adding-new-administrator-user)
+
+[Setting up NAT for Internet Access](#setting-up-nat-for-internet-access)
+
+[Setting up DHCP server](#setting-up-dhcp-server)
+
 [Sections](#sections)
 
 ## Setting up Network Interfaces
@@ -128,7 +134,7 @@ Expand the 'mydomain.com' directory on the left of the window.
 
 Then right click 'mydomain.com' and select New > Organisational Unit. An organisational unit (OU) is a directory for storing different objects in Active Directory, such as users, computers, and groups.
 
-Name this OU '_Admins'. Prepending underscores to OUs makes it easier to identify custom OUs in large quantities.
+Name this OU '\_Admins'. Prepending underscores to OUs makes it easier to identify custom OUs in large quantities.
 
 <p align="center">
 <img src="../../images/create_new_ou.png" alt="mydomain.com inside Users and Computers" height="300px">
@@ -179,6 +185,62 @@ Enter the logon name of the admin user and their password, and press 'Enter'.
 </p>
 
 You will now login as the admin user.
+
+## Setting up NAT for Internet Access
+
+Remote Access is a service in Active Directory, which has Network Access Translation (NAT) capabilities. NAT allows the client computers to access the internet by using the domain controller's public IP address, which is provided by the domain controller's NAT network adapter in VirtualBox.
+
+To download Remote Access, go to Server Manager and click 'Add roles and features'. On the window, click 'Next > Next > Next'. Select 'Remote Access' and click 'Next > Next > Next'.
+
+<p align="center">
+<img src="../../images/remote_access_option.png" alt="Remote Access option" height="80px">
+</p>
+
+For the Remote Access roles, select 'Routing'.
+
+<p align="center">
+<img src="../../images/routing_option.png" alt="Routing option" height="60px">
+</p>
+
+On the popup, click 'Add Features', then click 'Next > Next > Next > Install'.
+
+Once the installation is complete, click 'Close' and go to 'Tools' on the top right of the Server Manager and click 'Routing and Remote Access'.
+
+<p align="center">
+<img src="../../images/routing_and_remote_access.png" alt="Routing and Remote Access" height="70px">
+</p>
+
+In the new window, right click 'DC (local)', and select 'Configure and Enable Routing and Remote Access'. In the setup wizard, click 'Next' and select the 'NAT' radio button. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/select_nat.png" alt="Selecting NAT option" height="200px">
+</p>
+
+Then from the two network interfaces that show up, select the internet one, which in this lab is named 'O_Internet_O'.
+
+<p align="center">
+<img src="../../images/internet_interface_select.png" alt="Selecting internet interface" height="120px">
+</p>
+
+> NOTE - If the interfaces do not show up, close the setup wizard and Routing and Remote Access, and reopen them.
+
+Click 'Next > Finish', and the NAT will begin to setup.
+
+> NOTE - If you get the following warning after clicking 'Finish', press OK and the NAT will setup anyway.
+>
+> <p align="center">
+> <img src="../../images/nat_warning.png" alt="NAT setup warning" height="180px">
+> </p>
+
+Once the NAT has been setup, the 'DC (local)' text in the Routing and Remote Access window has changed from a circle with a red arrow to a circle with a green arrow. This means the NAT has been setup successfully.
+
+<p align="center">
+<img src="../../images/green_dc_local.png" alt="DC local icon changes to green arrow" height="25px">
+</p>
+
+## Setting up DHCP server
+
+
 
 ## Sections
 
