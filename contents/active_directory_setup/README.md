@@ -240,6 +240,39 @@ Once the NAT has been setup, the 'DC (local)' text in the Routing and Remote Acc
 
 ## Setting up DHCP server
 
+Active Directory has a DHCP server feature, which automatically leases IP addresses to client devices connected to the internal network, giving them the ability to communicate with each other and the internet.
+
+To install the DHCP service, go to Server Manager, and select 'Add roles and features' and click 'Next > Next > Next'. Now select 'DHCP Server' and click 'Add Features' in the popup window.
+
+<p align="center">
+<img src="../../images/dhcp_server_option.png" alt="DHCP server option" height="55px">
+</p>
+
+Then click 'Next > Next > Next > Install' to install the DHCP service. Once the installation is complete, click 'Close'. Then on Server Manager, go to 'Tools > DHCP'.
+
+On the left, click the arrow next to  your domain controller's domain name (dc.mydomain.com), right click 'IPv4' and select 'New Scope'.
+
+<p align="center">
+<img src="../../images/dhcp_new_scope.png" alt="DHCP new scope" height="110px">
+</p>
+
+Click 'Next', then give the scope the name '172.16.0.100-200' and click 'Next'.
+
+<p align="center">
+<img src="../../images/dhcp_scope_name.png" alt="Creating DHCP scope name" height="80px">
+</p>
+
+Add the '172.16.0.100' as the start IP address, '172.16.0.200' as the end IP address, and 24 for the length, which will automatically make the subnet mask '255.255.255.0'.
+
+<p align="center">
+<img src="../../images/dhcp_ranges.png" alt="Setting up DHCP scope" height="250px">
+</p>
+
+Click 'Next > Next'. For the lease duration, it is set as 8 days by default, which is a sensible value. This should be decreased if this was a DHCP server for a public WiFi network. Click 'Next'.
+
+<p align="center">
+<img src="../../images/dhcp_lease_time.png" alt="DHCP lease times" height="80px">
+</p>
 
 
 ## Sections
