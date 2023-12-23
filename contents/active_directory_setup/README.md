@@ -4,6 +4,8 @@
 
 [Setting up Network Interfaces](#setting-up-network-interfaces)
 
+[Installing Active Directory](#installing-active-directory)
+
 [Adding New Administrator User](#adding-new-administrator-user)
 
 [Setting up NAT for Internet Access](#setting-up-nat-for-internet-access)
@@ -66,7 +68,7 @@ Change the name to 'DC' and click 'Next', then click 'Restart Now > Continue' to
 
 Now your DC VM will have the hostname 'DC'.
 
-## Installing Active Directory Domain Services
+## Installing Active Directory
 
 To install Active Directory Domain Services to the DC, go to the server manager application, which by default will display its dashboard.
 
