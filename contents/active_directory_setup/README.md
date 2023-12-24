@@ -312,4 +312,4 @@ Then right click the DC domain name again and click 'Refresh'. Now the IPv4 and 
 
 #### Previous Section: [Setting up Virtual Machines](../virtual_machine_setup/)
 
-#### Next Section: [...](.)
+#### Next Section: [Creating Users using Powershell Script](../powershell_users_script/)

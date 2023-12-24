@@ -37,3 +37,7 @@ Setting up virtual machines for Active Directory lab
 ### [Setting up Active Directory Domain Services](./contents/active_directory_setup/)
 
 Setting up Active Directory Domain Services on the DC virtual machine, which includes the DNS, NAT, and DHCP services.
+
+### [Creating Users using Powershell Script](./contents/powershell_users_script/)
+
+Automating the creation of users and organisational units in Active Directory using a Powershell Script
