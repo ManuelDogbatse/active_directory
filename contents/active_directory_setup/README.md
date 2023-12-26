@@ -192,6 +192,8 @@ You will now login as the admin user.
 
 Remote Access is a service in Active Directory, which has Network Access Translation (NAT) capabilities. NAT allows the client computers to access the internet by using the domain controller's public IP address, which is provided by the domain controller's NAT network adapter in VirtualBox.
 
+> NOTE - This setup is not suitable in a production environment. The best setup for internet access is to make the router the default gateway for both the DC and client computers, and set the DC as the DNS server for the client computers.
+
 To download Remote Access, go to Server Manager and click 'Add roles and features'. On the window, click 'Next > Next > Next'. Select 'Remote Access' and click 'Next > Next > Next'.
 
 <p align="center">
