@@ -115,7 +115,18 @@ Otherwise, run the Powershell script by pressing the 'Run Script' icon in the to
 Enter the password that you want to give the accounts in this lab if prompted, and now the script will automatically create the organisational units, groups and users in AD.
 
 <p align="center">
-<img src="../../images/ps_script_run.png" alt="Powershell script running" height="180px">
+<img src="../../images/ps_script_run.png" alt="Powershell script running" height="280px">
+</p>
+
+Once the script is complete, if you didn't modify the text files, Active Directory will now have:
+- 3 OUs for each department (Finance, Human Resouces, and Information Technology)
+- 3 Client Computers, one for each department
+- ~1000 users split evenly into each department's OU
+
+You can find all these objects in the 'Active Directory Users and Computers' tool.
+
+<p align="center">
+<img src="../../images/ad_users.png" alt="New objects created in Active Directory" height="160px">
 </p>
 
 ## Sections
