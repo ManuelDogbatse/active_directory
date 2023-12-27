@@ -1,8 +1,10 @@
-# Creating Users using Powershell Script
+# Active Directory Scripting
 
 ### Table of Contents
 
 [Installing Python](#installing-python)
+
+[Running Scripts](#running-scripts)
 
 [Sections](#sections)
 
@@ -10,7 +12,7 @@
 
 Now that Active Directory has been setup, it is time to simulate a real-world example of Active Directory in use to manage a company's users and computers. Creating objects in Active Directory can be automated through the use of Powershell scripts, with the use of the Active Directory API.
 
-I have written two scripts: one in Python, and one in Powershell. The Python script is responsible for reformatting the names text file to ensure that no empty lines are added as AD users, and that there are no duplicate usernames from clashing first name initials and surname combinations. The Powershell script creates organisational units for each department in the departments text file, and then creates users using the formatted names text file and adds them to one of the three departments using a loop.
+I have written two scripts: one in Python, and one in Powershell. The Python script is responsible for reformatting the names text file to ensure that no empty lines are added as AD users, and that there are no duplicate usernames from clashing first name initials and surname combinations. The Powershell script creates organisational units for each department in the departments text file, and then creates around 1000 users using the formatted names text file and adds them to one of the three departments using a loop.
 
 Drag and drop the 'files' folder in the directory of this README file into the virtual machine. If you enabled 'Drag'n'Drop', the files should copy into the desktop.
 
@@ -55,6 +57,8 @@ python -V
 ```
 
 Powershell will return 'Python 3.11.5' if Python has installed successfully.
+
+## Running Scripts
 
 Now that Python has installed, exit Powershell, then go 'Start Menu > Windows Powershell' and right click 'Windows Powershell ISE'.
 
@@ -108,7 +112,11 @@ Otherwise, run the Powershell script by pressing the 'Run Script' icon in the to
 <img src="../../images/run_script_icon.png" alt="Run script icon" height="74px">
 </p>
 
-Enter the password that you want to give the accounts in this lab if prompted, and now the script will automatically create the organisational units and users in AD.
+Enter the password that you want to give the accounts in this lab if prompted, and now the script will automatically create the organisational units, groups and users in AD.
+
+<p align="center">
+<img src="../../images/ps_script_run.png" alt="Powershell script running" height="180px">
+</p>
 
 ## Sections
 
