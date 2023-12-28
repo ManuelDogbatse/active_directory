@@ -119,6 +119,7 @@ Enter the password that you want to give the accounts in this lab if prompted, a
 </p>
 
 Once the script is complete, if you didn't modify the text files, Active Directory will now have:
+
 - 3 OUs for each department (Finance, Human Resouces, and Information Technology)
 - 3 Client Computers, one for each department
 - ~1000 users split evenly into each department's OU
@@ -135,4 +136,4 @@ You can find all these objects in the 'Active Directory Users and Computers' too
 
 #### Previous Section: [Setting up Active Directory Domain Services](../active_directory_setup/)
 
-#### Next Section: [](.)
+#### Next Section: [Setting Up Client Computer](../client_setup/)
