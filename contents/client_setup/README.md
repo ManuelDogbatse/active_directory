@@ -191,6 +191,8 @@ To do this, right click the Windows icon and select 'System'.
 <img src="../../images/start_system.png" alt="Start > System" height="500px">
 </p>
 
+Scroll down and click 'Rename this PC (advanced)'.
+
 ## Sections
 
 #### Home Page: [Active Directory](../../)
