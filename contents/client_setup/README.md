@@ -68,6 +68,84 @@ Then click 'Install Now'.
 
 After some time, you will be asked to enter a product key. Click 'I don't have a product key'.
 
+<p align="center">
+<img src="../../images/win_10_no_key.png" alt="No product key in Windows 10 setup" height="70px">
+</p>
+
+Then select 'Windows 10 Pro' for the operating system and click 'Next'.
+
+<p align="center">
+<img src="../../images/win_10_windows_pro.png" alt="Selecting Windows 10 Pro" height="180px">
+</p>
+
+Check the box to accept the license terms and click 'Next'. Then select the 'Custom' installation type.
+
+<p align="center">
+<img src="../../images/win_10_custom_inst_type.png" alt="Selecting custom Windows installation type" height="120px">
+</p>
+
+Click 'Next' and Windows 10 will begin installing.
+
+After some time, the virtual machine will restart automatically and load some more. Eventually, you will be greeted with a screen with options.
+
+> IMPORTANT - This part of the Windows 10 setup includes steps that will differ from instance to instance. This means the steps I outline will differ to the steps you take. The main point though is to make a local user account, which connects to the internal network without unnecessary tracking and ads, so if you set up the client with this in mind, the outcome will be the same.
+
+For the region, make sure your region is selected, and click 'Yes'.
+
+<p align="center">
+<img src="../../images/win_10_select_region.png" alt="Selecting region" height="150px">
+</p>
+
+For the keyboard layout, make sure your layout is selected, and click 'Yes'.
+
+<p align="center">
+<img src="../../images/win_10_select_key.png" alt="Selecting keyboard layout" height="310px">
+</p>
+
+Click 'Skip' for the second keyboard layout. After some time, you will be asked how you would like to setup your Windows 10 computer. Select 'Set up for personal use' and click 'Next'.
+
+<p align="center">
+<img src="../../images/win_10_personal_setup.png" alt="Selecting personal setup" height="150px">
+</p>
+
+Click 'Offline Account' on the bottom right when prompted to add your Microsoft account.
+
+<p align="center">
+<img src="../../images/win_10_offline_account.png" alt="Selecting offline account" height="400px">
+</p>
+
+Select 'Limited experience' on the bottom right when prompted to sign into Microsoft account.
+
+<p align="center">
+<img src="../../images/win_10_limited_exp.png" alt="Selecting limited experience" height="390px">
+</p>
+
+Then for the local user's username, make it 'user' and click 'Next'. Leave the password black and click 'Next'.
+
+> NOTE - The user and password will not be used as this will be a computer controlled by Active Directory.
+
+For the browser import prompt, click 'Not now'.
+
+<p align="center">
+<img src="../../images/win_10_no_browser_import.png" alt="Selecting not now for browser import" height="390px">
+</p>
+
+For the location, ads, and diagnostic data settings, choose either the 'No', 'Limited', or 'Required only' options.
+
+Skip the experience customisation options. Click 'Not now' for Cortana.
+
+Now the account will setup.
+
+<p align="center">
+<img src="../../images/win_10_account_setup.png" alt="Windows 10 setting up user account" height="200px">
+</p>
+
+After some time, Windows 10 will finally finish setting up, and you will be faced with the main desktop.
+
+<p align="center">
+<img src="../../images/win_10_home_screen.png" alt="Windows 10 main desktop" height="400px">
+</p>
+
 ## Sections
 
 #### Home Page: [Active Directory](../../)
