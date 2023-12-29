@@ -4,6 +4,8 @@
 
 [Setting Up Client Computer Virtual Machine](#setting-up-client-computer-virtual-machine)
 
+[Adding Client Machine to Active Directory](#adding-client-machine-to-active-directory)
+
 [Sections](#sections)
 
 ## Setting Up Client Computer Virtual Machine
@@ -144,6 +146,49 @@ After some time, Windows 10 will finally finish setting up, and you will be face
 
 <p align="center">
 <img src="../../images/win_10_home_screen.png" alt="Windows 10 main desktop" height="400px">
+</p>
+
+The next step is to check if the client machine is connected to the AD internal network, and has internet connectivity. Firstly, go to the command prompt by pressing 'START + R', typing in 'cmd' and pressing 'Enter'.
+
+
+<p align="center">
+<img src="../../images/open_cmd.png" alt="Opening command prompt" height="150px">
+</p>
+
+Then get the network interface information of the machine:
+
+```cmd
+ipconfig
+```
+
+The output should look something like this:
+
+<p align="center">
+<img src="../../images/ipconfig.png" alt="ipconfig in client machine" height="150px">
+</p>
+
+The IPv4 address should be in the ranges specified in the AD DHCP server (172.16.1.100-200), and the default gateway should be the IP address of the DC (172.16.0.1).
+
+To test the internet connectivity, we will send ICMP ping requests to Google.
+
+```cmd
+ping www.google.com
+```
+
+If the pings are successfully returned to the machine, then the client machine has internet connectivity.
+
+<p align="center">
+<img src="../../images/ping_google.png" alt="Pinging Google in client machine" height="150px">
+</p>
+
+## Adding Client Machine to Active Directory
+
+Now that the machine has been setup successfully, it needs to be connected to Active Directory.
+
+To do this, right click the Windows icon and select 'System'.
+
+<p align="center">
+<img src="../../images/start_system.png" alt="Start > System" height="500px">
 </p>
 
 ## Sections
