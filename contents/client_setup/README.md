@@ -124,7 +124,7 @@ Select 'Limited experience' on the bottom right when prompted to sign into Micro
 
 Then for the local user's username, make it 'user' and click 'Next'. Leave the password black and click 'Next'.
 
-> NOTE - The user and password will not be used as this will be a computer controlled by Active Directory.
+> NOTE - The user and password will not be used as this will be a computer controlled by Active Directory. However, in a production environment, use a stronger username and password.
 
 For the browser import prompt, click 'Not now'.
 
