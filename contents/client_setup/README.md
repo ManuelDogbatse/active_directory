@@ -181,6 +181,26 @@ If the pings are successfully returned to the machine, then the client machine h
 <img src="../../images/ping_google.png" alt="Pinging Google in client machine" height="150px">
 </p>
 
+Before adding the PC to Active Directory, add VirtualBox to improve the display. Click Devices > Insert Guest Additions CD image in the toolbar on the top left of the virtual machine window.
+
+<p align="center">
+<img src="../../images/insert_guest_add.png" alt="Inserting Guest Additions CD image" height="230px">
+</p>
+
+Then inside the VM, open File Explorer and go to This PC > CD Drive (D:) VirtualBox Guest Additions. Then click the Windows executable ending in 'amd64' to open the Guest Additions installer:
+
+<p align="center">
+<img src="../../images/amd-64-exe.png" alt="Guest Additions Executable" height="100px">
+</p>
+
+Click Next > Next > Install to install Guest Additions. After it installs, select the 'I want to manually reboot later' option and click Finish.
+
+<p align="center">
+<img src="../../images/guest_add_finish.png" alt="Finishing Guest Additions Installation" height="300px">
+</p>
+
+Then manually shut down the computer and reopen it for Guest Additions to take effect.
+
 ## Adding Client Machine to Active Directory
 
 Now that the machine has been setup successfully, it needs to be connected to Active Directory.
@@ -191,7 +211,61 @@ To do this, right click the Windows icon and select 'System'.
 <img src="../../images/start_system.png" alt="Start > System" height="500px">
 </p>
 
-Scroll down and click 'Rename this PC (advanced)'.
+Scroll down and click 'Rename this PC (advanced)'. If it's not at the bottom of the page, then it should be on the right of the page.
+
+<p align="center">
+<img src="../../images/win_10_rename_pc.png" alt="Rename PC" height="70px">
+</p>
+
+Then click 'Change'.
+
+<p align="center">
+<img src="../../images/change_name.png" alt="Change name of PC" height="50px">
+</p>
+
+Name the PC the same name as the computer object within Active Directory. In this case 'FN-CLIENT1'. Click the 'Domain' radio button and type 'mydomain.com' into the domain name. Then click 'OK'.
+
+<p align="center">
+<img src="../../images/renaming_client.png" alt="Changing name of PC to AD computer name" height="300px">
+</p>
+
+A popup will appear asking you to enter the account details of an account in the AD domain. Use the custom administrator account's username and password and click 'OK'.
+
+<p align="center">
+<img src="../../images/admin_login_for_client.png" alt="Adding the admin's details to connect the PC to AD" height="150px">
+</p>
+
+If successful, you will be given a popup welcoming your PC to 'mydomain.com'. Click 'OK > OK' and then close the PC name settings to get the restart prompt. Select 'Restart Now' to restart your computer.
+
+<p align="center">
+<img src="../../images/restart_client.png" alt="Restarting the client computer" height="160px">
+</p>
+
+After resetting the computer, click 'Other User' on the bottom right of the login screen.
+
+<p align="center">
+<img src="../../images/other_user_client.png" alt="Other user" height="120px">
+</p>
+
+You will now see that you can login as a user from 'MYDOMAIN'. For this example, we will use the first Finance user, which is 'aabrev'. Enter the login credentials for 'aabrev' and press Enter to login.
+
+<p align="center">
+<img src="../../images/ad_login_client.png" alt="Signing into client as AD user" height="350px">
+</p>
+
+After logging in, wait for a minute and after the account has been set up, the AD user will be successfully logged in through the client PC.
+
+To see this change, go to the DC and go to the DHCP tool. If you go to the address leases in our defined scope, you will see the client PC.
+
+<p align="center">
+<img src="../../images/client_in_dhcp.png" alt="Client computer in DHCP" height="60px">
+</p>
+
+Also, if you go to 'Active Directory Users and Computers' and click the properties of the client PC connected to AD, it will show you the operating system of the client PC in its properties.
+
+<p align="center">
+<img src="../../images/client_in_users_and_comps.png" alt="Client computer in Users and Computers" height="170px">
+</p>
 
 ## Sections
 
