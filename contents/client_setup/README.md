@@ -201,6 +201,40 @@ Click Next > Next > Install to install Guest Additions. After it installs, selec
 
 Then manually shut down the computer and reopen it for Guest Additions to take effect.
 
+Before moving onto the next step, take a snapshot of the client VM's current state, as this will be used as a base template for the other client VMs.
+
+To do this, make sure the client VM is shut down, then in VirtualBox, click the slider icon on the right of the virtual machine, and click 'Snapshots'.
+
+<p align="center">
+<img src="../../images/snapshot_option.png" alt="VirtualBox snapshot option" height="90px">
+</p>
+
+Then click the 'Take' icon to take a snapshot. Give the snapshot the name 'AD-CLIENT Base State' and click 'OK' to create the snapshot.
+
+<p align="center">
+<img src="../../images/created_snapshot.png" alt="Created new snapshot" height="130px">
+</p>
+
+Now that the base snapshot has been taken, clone the snapshot by clicking on the snapshot, and clicking the 'Clone' icon.
+
+<p align="center">
+<img src="../../images/clone_option.png" alt="Clone state icon" height="110px">
+</p>
+
+Change the name to 'AD-HR-CLIENT1', and make sure that the MAC address policy is not 'Include all network adapter MAC addresses'. This will result in the two client machines having the same MAC address and as a result, using the same IP address in AD. Then click 'Next'.
+
+<p align="center">
+<img src="../../images/clone_name.png" alt="Renaming clone VM" height="200px">
+</p>
+
+Make sure that 'Full clone' is selected and then click 'Next'. Then make sure 'Current machine state' is selected and the click 'Finish'. After some time, you will now have a clone of the first client machine.
+
+Repeat the cloning process again, but this time create a clone named 'AD-IT-CLIENT1' for the IT department client computer.
+
+<p align="center">
+<img src="../../images/client_vm_list.png" alt="Client VM list" height="200px">
+</p>
+
 ## Adding Client Machine to Active Directory
 
 Now that the machine has been setup successfully, it needs to be connected to Active Directory.
