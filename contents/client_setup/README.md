@@ -289,10 +289,12 @@ You will now see that you can login as a user from 'MYDOMAIN'. For this example,
 
 After logging in, wait for a minute and after the account has been set up, the AD user will be successfully logged in through the client PC.
 
-To see this change, go to the DC and go to the DHCP tool. If you go to the address leases in our defined scope, you will see the client PC.
+Repeat the process of renaming the PC for the other two client machines. Make sure to rename the PC to 'HR-CLIENT1' for the HR VM, and 'IT-CLIENT1' for the IT VM.
+
+To see the changes, go to the DC and go to the DHCP tool. If you go to the address leases in you defined scope, you will see the client PCs.
 
 <p align="center">
-<img src="../../images/client_in_dhcp.png" alt="Client computer in DHCP" height="60px">
+<img src="../../images/clients_in_dhcp.png" alt="Client computer in DHCP" height="90px">
 </p>
 
 Also, if you go to 'Active Directory Users and Computers' and click the properties of the client PC connected to AD, it will show you the operating system of the client PC in its properties.
